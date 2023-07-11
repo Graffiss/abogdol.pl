@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
+import { documentInternationalization } from "@sanity/document-internationalization";
 import schemas from "./sanity/schemas/index";
 
 const config = defineConfig({
@@ -9,7 +10,17 @@ const config = defineConfig({
   dataset: "production",
   apiVersion: "2023-06-04",
   basePath: "/admin",
-  plugins: [deskTool()],
+  plugins: [
+    deskTool(),
+    documentInternationalization({
+      supportedLanguages: [
+        { id: "en", title: "English" },
+        { id: "pl", title: "Polish" },
+        { id: "es", title: "Spanish" },
+      ],
+      schemaTypes: [...schemas.map((schema) => schema.name)],
+    }),
+  ],
   schema: { types: schemas },
 });
 

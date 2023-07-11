@@ -38,6 +38,8 @@ const blogPost = {
       type: "array",
       of: [{ type: "block" }],
     },
+
+    { name: "language", type: "string", readOnly: true, hidden: true },
   ],
 };
 

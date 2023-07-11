@@ -1,7 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { CountrySelector } from "~/components/country-selector/country-selector";
 
 export default function Home() {
+  const { locale } = useRouter();
   return (
     <>
       <Head>
@@ -14,6 +17,8 @@ export default function Home() {
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
             Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
           </h1>
+          <h2 className="text-white">Current locale is: {locale}</h2>
+          <CountrySelector />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
             <Link
               className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"

@@ -17,6 +17,7 @@ const project = {
         maxLength: 96,
       },
     },
+    { name: "language", type: "string", readOnly: true, hidden: true },
   ],
 };
 
