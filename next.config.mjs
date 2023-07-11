@@ -18,6 +18,15 @@ const config = {
     locales: ["en", "pl", "es"],
     defaultLocale: "en",
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        port: "",
+      },
+    ],
+  },
 };
 
 export default config;
